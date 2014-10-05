@@ -1,0 +1,83 @@
+@echo off
+:clear
+cls
+title Blockit Server 1.7.10
+echo Blockit Server 1.7.10 // Created by Team Blockit
+echo ================================================
+echo Type /help or "?" for help.
+set /p command=">>"
+goto %command%
+echo Blockit Server 1.7.10 >> blockit.bsf
+echo 
+:help
+echo HELP:
+echo help : Displays usable commands for Blockit Serer.
+echo clear: Clears all commands and info.
+echo stop : Closes the server.
+echo info: Displays server software.
+echo creators: Displays developers of Blobkit.
+echo developers:	Displays developers of Blockit.
+echo server: Displays server info.
+echo ram: Displays max amount of ram allowed.
+echo bsf: Creates Blockit Server File (BSF).
+set /p command=">>"
+goto %command%
+:info
+echo Server Running "Blockit Server 1.7.10"
+set /p command=">>"
+goto %command%
+:creators
+echo Adoma_ // Web, Windows and Java Developer
+echo CactusCombo // Java Developer
+set /p command=">>"
+goto %command%
+:bsf
+echo Creating a BSF file.
+set /p data=Data Input to file:
+set /p name=Name of file:
+echo File Config :
+echo %data% > %name%.bsf
+echo File Created!
+set /p command=">>"
+goto %command%
+:developers
+echo Adoma_ //Windows and Java Developer
+echo CactusCombo // Web and Java Developer
+set /p command=">>"
+goto %command%
+:server
+echo Server Running "Blockit Server 1.7.10"
+set /p command=">>"
+goto %command%
+:rewrite
+echo ReWrite a file
+set /p cdata=Data:
+set /p cname=Filename:
+echo File Changed!
+set /p command=">>"
+goto %command%
+:online
+cls
+echo Blockit Server 1.7.10 // Created by Team Blockit
+echo ================================================
+For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
+For /f "tokens=1-2 delims=/: " %%a in ('time /t') do (set mytime=%%a%%b)
+echo [%mydate%_%mytime%] Server is Online.
+set /p command=">>"
+goto %command%
+
+:ram
+echo Max Ram = %ram%
+set /p ram=Change Max Ram:
+pause
+echo Ram Changed !
+echo %ram%Xms > ram.bsf
+set /p command=">>"
+goto %command%
+pause >nul
+:stop
+echo Stopping server ...
+:offline
+For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
+For /f "tokens=1-2 delims=/: " %%a in ('time /t') do (set mytime=%%a%%b)
+echo [%mydate%_%mytime%] Server is Offline.
